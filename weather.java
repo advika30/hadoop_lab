@@ -56,7 +56,7 @@ public class reducer extends MapReduceBase implements Reducer<Text,DoubleWritabl
             max=Math.max(temp,max);
             min=Math.min(temp,min);
           }
-          output.collect(new Text("max at"+key),new DoubleWritable(max));
-          output.collect(new Text("min at"+key),new DoubleWritable(min));
+          output.collect(key,new DoubleWritable(max));
+          output.collect(key,new DoubleWritable(min));
     }
 }
